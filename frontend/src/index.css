@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+body {
+  background-color: #0d0d11; 
+  color: #f0f0f0;           
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+input,
+textarea {
+  color: #000;
+}
+
+
+
+/* Gradient text effect */
+.text-gradient {
+  background: linear-gradient(to right, #ff79c6, #bd93f9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #ff79c6; 
+}
+
+.bg-gradient {
+  background: linear-gradient(to right, #ff79c6, #bd93f9);
+}
+
+/* Gradient button */
+.btn-gradient {
+  background: linear-gradient(to right, #ff79c6, #bd93f9);
+  color: white;
+  border: none;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(to right, #ff64b8, #ac7af8);
+}
+
+/* Glow effects */
+.shadow-glow {
+  box-shadow: 0 0 20px rgba(255, 121, 198, 0.5);
+}
+
+.shadow-glow-sm {
+  box-shadow: 0 0 12px rgba(255, 121, 198, 0.3);
+}
+
+/* Dark theme improvements */
+body {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Improved scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3d3d3d;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff79c6;
+}
