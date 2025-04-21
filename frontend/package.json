@@ -12,7 +12,6 @@
   "dependencies": {
     "@paypal/react-paypal-js": "^8.8.3",
     "@reduxjs/toolkit": "^2.6.1",
-    "@tailwindcss/vite": "^4.1.4",
     "apexcharts": "^4.5.0",
     "axios": "^1.8.4",
     "flowbite": "^3.1.2",
@@ -30,6 +29,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
+    "@tailwindcss/vite": "^4.1.4",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.4.1",
