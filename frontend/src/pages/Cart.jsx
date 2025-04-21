@@ -1,12 +1,13 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { FaTrash } from "react-icons/fa";
 import { addToCart, removeFromCart } from "../redux/features/cart/cartSlice";
 
 const Cart = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { cartItems } = useSelector((state) => state.cart);
+  const [showPopup, setShowPopup] = useState(false);
 
   const addToCartHandler = (product, qty) => {
     dispatch(addToCart({ ...product, qty }));
@@ -17,11 +18,15 @@ const Cart = () => {
   };
 
   const checkoutHandler = () => {
-    navigate("/login?redirect=/shipping");
+    setShowPopup(true); // Show the popup instead of navigating
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
   };
 
   return (
-    <div className="container mx-auto mt-10 px-6">
+    <div className="container mx-auto mt-10 px-6 relative">
       {cartItems.length === 0 ? (
         <div className="text-center text-lg">
           Your cart is empty.{" "}
@@ -111,6 +116,24 @@ const Cart = () => {
                 Proceed To Checkout
               </button>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Coming Soon Popup */}
+      {showPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-gray-900 p-6 rounded-lg text-center max-w-sm w-full shadow-xl">
+            <h2 className="text-xl font-bold mb-2 text-white">Coming Soon</h2>
+            <p className="text-white mb-4">
+              The checkout feature is not available yet.
+            </p>
+            <button
+              onClick={closePopup}
+              className="bg-pink-500 px-4 py-2 text-white rounded-full hover:bg-pink-600"
+            >
+              Okay
+            </button>
           </div>
         </div>
       )}
